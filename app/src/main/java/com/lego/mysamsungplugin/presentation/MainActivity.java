@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements ControlsCallback 
             new Handler(Looper.getMainLooper()).post(new Runnable() {
                 @Override
                 public void run() {
-                    Toast.makeText(MainActivity.this, BuildConfig.PLUGIN_NAME + counter++, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, BuildConfig.PLUGIN_NAME + " " + counter++, Toast.LENGTH_SHORT).show();
                 }
             });
         }
