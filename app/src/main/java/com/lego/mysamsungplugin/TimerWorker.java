@@ -15,8 +15,6 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
-import static java.util.Calendar.SECOND;
-
 public class TimerWorker extends Worker {
 
     private int counter = 0;
@@ -41,7 +39,7 @@ public class TimerWorker extends Worker {
     @NonNull
     @Override
     public Result doWork() {
-        currentTask = scheduledPool.scheduleWithFixedDelay(sevenSecondsToast, SECOND, BuildConfig.PLUGIN_TIMER_DELAY, TimeUnit.SECONDS);
+        currentTask = scheduledPool.scheduleWithFixedDelay(sevenSecondsToast, 1, BuildConfig.PLUGIN_TIMER_DELAY, TimeUnit.SECONDS);
         return null;
     }
 
