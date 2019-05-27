@@ -20,7 +20,7 @@ public class TimerWorker extends Worker {
     private int counter = 0;
     private ScheduledFuture currentTask;
     private ScheduledExecutorService scheduledPool = Executors.newScheduledThreadPool(1);
-    private Runnable sevenSecondsToast = new Runnable() {
+    private Runnable TimedToastTask = new Runnable() {
         @Override
         public void run() {
             new Handler(Looper.getMainLooper()).post(new Runnable() {
@@ -39,8 +39,8 @@ public class TimerWorker extends Worker {
     @NonNull
     @Override
     public Result doWork() {
-        currentTask = scheduledPool.scheduleWithFixedDelay(sevenSecondsToast, 1, BuildConfig.PLUGIN_TIMER_DELAY, TimeUnit.SECONDS);
-        return null;
+        currentTask = scheduledPool.scheduleWithFixedDelay(TimedToastTask, 1, BuildConfig.PLUGIN_TIMER_DELAY, TimeUnit.SECONDS);
+        return Worker.Result.success();
     }
 
     @Override

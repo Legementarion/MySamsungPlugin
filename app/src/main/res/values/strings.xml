@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MySamsungPlugin</string>
+    <string name="plugin_notification_message">Plugin is running in background</string>
 </resources>
